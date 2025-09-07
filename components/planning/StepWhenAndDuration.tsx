@@ -62,17 +62,17 @@ export function StepWhenAndDuration({ data, onUpdate, onNext }: StepWhenAndDurat
   return (
     <div className="space-y-6">
       <div className="text-center">
-        <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
-          <Calendar className="w-8 h-8 text-indigo-600" />
+        <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+          <Calendar className="w-8 h-8 text-white" />
         </div>
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">Quando parti e per quanti giorni?</h2>
-        <p className="text-gray-600">Scegli la stagione di viaggio e la durata del tuo viaggio</p>
+        <h2 className="text-2xl font-bold text-white mb-2">Quando parti e per quanti giorni?</h2>
+        <p className="text-white/80 font-medium">Scegli la stagione di viaggio e la durata del tuo viaggio</p>
       </div>
 
       {/* When Section */}
       <div className="space-y-4">
-        <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
-          <Calendar className="w-5 h-5" />
+        <h3 className="text-lg font-semibold text-white flex items-center gap-2">
+          <Calendar className="w-5 h-5 text-white" />
           Quando viaggi?
         </h3>
         
@@ -83,14 +83,14 @@ export function StepWhenAndDuration({ data, onUpdate, onNext }: StepWhenAndDurat
               onClick={() => handleWhenSelect(season.id)}
               className={`p-4 rounded-lg border-2 transition-all ${
                 data.when === season.id
-                  ? 'border-indigo-500 bg-indigo-50'
-                  : 'border-gray-200 hover:border-gray-300'
+                  ? 'border-blue-500 bg-blue-500/20 backdrop-blur-sm'
+                  : 'border-white/20 hover:border-white/40 bg-white/5 backdrop-blur-sm'
               }`}
             >
               <div className="text-center">
                 <div className="text-3xl mb-2">{season.emoji}</div>
-                <div className="font-medium text-gray-900">{season.name}</div>
-                <div className="text-sm text-gray-500">{season.months}</div>
+                <div className="font-medium text-white">{season.name}</div>
+                <div className="text-sm text-white/70">{season.months}</div>
               </div>
             </button>
           ))}
@@ -99,7 +99,7 @@ export function StepWhenAndDuration({ data, onUpdate, onNext }: StepWhenAndDurat
         <div className="text-center">
           <button
             onClick={() => setShowMonths(!showMonths)}
-            className="text-indigo-600 hover:text-indigo-700 font-medium text-sm"
+            className="text-blue-400 hover:text-blue-300 font-medium text-sm"
           >
             {showMonths ? 'Nascondi mesi specifici' : 'Scegli un mese specifico'}
           </button>
@@ -113,13 +113,13 @@ export function StepWhenAndDuration({ data, onUpdate, onNext }: StepWhenAndDurat
                 onClick={() => handleWhenSelect(month.id)}
                 className={`p-3 rounded-lg border transition-all ${
                   data.when === month.id
-                    ? 'border-indigo-500 bg-indigo-50'
-                    : 'border-gray-200 hover:border-gray-300'
+                    ? 'border-blue-500 bg-blue-500/20 backdrop-blur-sm'
+                    : 'border-white/20 hover:border-white/40 bg-white/5 backdrop-blur-sm'
                 }`}
               >
                 <div className="text-center">
                   <div className="text-xl mb-1">{month.emoji}</div>
-                  <div className="text-sm font-medium text-gray-900">{month.name}</div>
+                  <div className="text-sm font-medium text-white">{month.name}</div>
                 </div>
               </button>
             ))}
@@ -129,8 +129,8 @@ export function StepWhenAndDuration({ data, onUpdate, onNext }: StepWhenAndDurat
 
       {/* Duration Section */}
       <div className="space-y-4">
-        <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
-          <Clock className="w-5 h-5" />
+        <h3 className="text-lg font-semibold text-white flex items-center gap-2">
+          <Clock className="w-5 h-5 text-white" />
           Quanto dura il tuo viaggio?
         </h3>
         
@@ -141,21 +141,21 @@ export function StepWhenAndDuration({ data, onUpdate, onNext }: StepWhenAndDurat
               onClick={() => handleDurationSelect(option.days)}
               className={`p-4 rounded-lg border-2 transition-all ${
                 data.duration === option.days
-                  ? 'border-indigo-500 bg-indigo-50'
-                  : 'border-gray-200 hover:border-gray-300'
+                  ? 'border-blue-500 bg-blue-500/20 backdrop-blur-sm'
+                  : 'border-white/20 hover:border-white/40 bg-white/5 backdrop-blur-sm'
               }`}
             >
               <div className="text-center">
-                <div className="text-2xl font-bold text-gray-900">{option.days}</div>
-                <div className="text-sm text-gray-600">{option.label}</div>
+                <div className="text-2xl font-bold text-white">{option.days}</div>
+                <div className="text-sm text-white/70">{option.label}</div>
               </div>
             </button>
           ))}
         </div>
 
         {/* Custom Duration */}
-        <div className="bg-gray-50 rounded-lg p-4">
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-4">
+          <label className="block text-sm font-medium text-white mb-2">
             Oppure inserisci una durata personalizzata (2-30 giorni):
           </label>
           <div className="flex items-center gap-2">
@@ -165,18 +165,18 @@ export function StepWhenAndDuration({ data, onUpdate, onNext }: StepWhenAndDurat
               max="30"
               value={data.duration}
               onChange={(e) => handleDurationSelect(parseInt(e.target.value) || 2)}
-              className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="flex-1 px-3 py-2 border border-white/30 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white/10 text-white placeholder:text-white/60"
             />
-            <span className="text-gray-600">giorni</span>
+            <span className="text-white/80">giorni</span>
           </div>
         </div>
       </div>
 
       {data.when && data.duration && (
-        <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
+        <div className="bg-blue-500/20 border border-blue-500/30 rounded-lg p-4 backdrop-blur-sm">
           <div className="flex items-center gap-3">
-            <Calendar className="w-5 h-5 text-indigo-600" />
-            <span className="text-indigo-900 font-medium">
+            <Calendar className="w-5 h-5 text-blue-400" />
+            <span className="text-white font-medium">
               {data.duration} giorni in {SEASONS.find(s => s.id === data.when)?.name || MONTHS.find(m => m.id === data.when)?.name}
             </span>
           </div>
@@ -188,7 +188,7 @@ export function StepWhenAndDuration({ data, onUpdate, onNext }: StepWhenAndDurat
           onClick={onNext}
           disabled={!data.when || !data.duration}
           size="lg"
-          className="px-8"
+          className="px-8 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
         >
           Continua
         </Button>

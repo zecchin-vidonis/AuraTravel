@@ -62,15 +62,15 @@ export function ButtonSignup() {
 
   if (success) {
     return (
-      <Card className="w-full max-w-md mx-auto">
+      <Card className="w-full max-w-md mx-auto bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl">
         <CardHeader>
-          <CardTitle>Controlla la tua email</CardTitle>
-          <CardDescription>
+          <CardTitle className="text-2xl font-bold text-white">Controlla la tua email</CardTitle>
+          <CardDescription className="text-white/80">
             Ti abbiamo inviato un link di conferma per verificare il tuo account.
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="text-sm text-green-600 bg-green-50 p-3 rounded-md">
+          <div className="text-sm text-green-300 bg-green-500/20 border border-green-500/30 p-3 rounded-md backdrop-blur-sm">
             Controlla la tua email e clicca sul link di conferma per completare la registrazione.
           </div>
         </CardContent>
@@ -79,17 +79,17 @@ export function ButtonSignup() {
   }
 
   return (
-    <Card className="w-full max-w-md mx-auto">
+    <Card className="w-full max-w-md mx-auto bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl">
       <CardHeader>
-        <CardTitle>Crea Account</CardTitle>
-        <CardDescription>
+        <CardTitle className="text-2xl font-bold text-white">Crea Account</CardTitle>
+        <CardDescription className="text-white/80">
           Inserisci i tuoi dati per creare un nuovo account
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email" className="text-white font-medium">Email</Label>
             <Input
               id="email"
               type="email"
@@ -97,10 +97,11 @@ export function ButtonSignup() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
+              className="bg-white/10 border-white/30 text-white placeholder:text-white/60 focus:border-blue-500 focus:ring-blue-500/20"
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="password">Password</Label>
+            <Label htmlFor="password" className="text-white font-medium">Password</Label>
             <Input
               id="password"
               type="password"
@@ -108,10 +109,11 @@ export function ButtonSignup() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
+              className="bg-white/10 border-white/30 text-white placeholder:text-white/60 focus:border-blue-500 focus:ring-blue-500/20"
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="confirmPassword">Conferma Password</Label>
+            <Label htmlFor="confirmPassword" className="text-white font-medium">Conferma Password</Label>
             <Input
               id="confirmPassword"
               type="password"
@@ -119,24 +121,29 @@ export function ButtonSignup() {
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
+              className="bg-white/10 border-white/30 text-white placeholder:text-white/60 focus:border-blue-500 focus:ring-blue-500/20"
             />
           </div>
           {error && (
-            <div className="text-sm text-red-600 bg-red-50 p-3 rounded-md">
+            <div className="text-sm text-red-300 bg-red-500/20 border border-red-500/30 p-3 rounded-md backdrop-blur-sm">
               {error}
             </div>
           )}
-          <Button type="submit" className="w-full" disabled={loading}>
+          <Button 
+            type="submit" 
+            className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white shadow-lg hover:shadow-blue-500/25 transition-all duration-300" 
+            disabled={loading}
+          >
             {loading ? 'Creazione account...' : 'Crea Account'}
           </Button>
         </form>
         
         <div className="relative">
           <div className="absolute inset-0 flex items-center">
-            <span className="w-full border-t" />
+            <span className="w-full border-t border-white/20" />
           </div>
           <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-background px-2 text-muted-foreground">
+            <span className="bg-transparent px-2 text-white/60">
               Oppure continua con
             </span>
           </div>
@@ -145,7 +152,7 @@ export function ButtonSignup() {
         <Button
           type="button"
           variant="outline"
-          className="w-full"
+          className="w-full bg-white/10 border-white/30 text-white hover:bg-white/20 backdrop-blur-sm"
           onClick={handleGoogleSignIn}
           disabled={loading}
         >

@@ -46,17 +46,17 @@ export function ButtonSignin() {
   }
 
   return (
-    <Card className="w-full max-w-md mx-auto">
+    <Card className="w-full max-w-md mx-auto bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl">
       <CardHeader>
-        <CardTitle>Accedi</CardTitle>
-        <CardDescription>
+        <CardTitle className="text-2xl font-bold text-white">Accedi</CardTitle>
+        <CardDescription className="text-white/80">
           Inserisci le tue credenziali per accedere al tuo account
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email" className="text-white font-medium">Email</Label>
             <Input
               id="email"
               type="email"
@@ -64,10 +64,11 @@ export function ButtonSignin() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
+              className="bg-white/10 border-white/30 text-white placeholder:text-white/60 focus:border-blue-500 focus:ring-blue-500/20"
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="password">Password</Label>
+            <Label htmlFor="password" className="text-white font-medium">Password</Label>
             <Input
               id="password"
               type="password"
@@ -75,24 +76,29 @@ export function ButtonSignin() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
+              className="bg-white/10 border-white/30 text-white placeholder:text-white/60 focus:border-blue-500 focus:ring-blue-500/20"
             />
           </div>
           {error && (
-            <div className="text-sm text-red-600 bg-red-50 p-3 rounded-md">
+            <div className="text-sm text-red-300 bg-red-500/20 border border-red-500/30 p-3 rounded-md backdrop-blur-sm">
               {error}
             </div>
           )}
-          <Button type="submit" className="w-full" disabled={loading}>
+          <Button 
+            type="submit" 
+            className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white shadow-lg hover:shadow-blue-500/25 transition-all duration-300" 
+            disabled={loading}
+          >
             {loading ? 'Accesso in corso...' : 'Accedi'}
           </Button>
         </form>
         
         <div className="relative">
           <div className="absolute inset-0 flex items-center">
-            <span className="w-full border-t" />
+            <span className="w-full border-t border-white/20" />
           </div>
           <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-background px-2 text-muted-foreground">
+            <span className="bg-transparent px-2 text-white/60">
               Oppure continua con
             </span>
           </div>
@@ -101,7 +107,7 @@ export function ButtonSignin() {
         <Button
           type="button"
           variant="outline"
-          className="w-full"
+          className="w-full bg-white/10 border-white/30 text-white hover:bg-white/20 backdrop-blur-sm"
           onClick={handleGoogleSignIn}
           disabled={loading}
         >

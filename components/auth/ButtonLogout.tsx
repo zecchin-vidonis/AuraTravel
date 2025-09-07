@@ -11,7 +11,11 @@ export function ButtonLogout() {
   }
 
   return (
-    <Button variant="outline" onClick={handleSignOut}>
+    <Button 
+      variant="outline" 
+      onClick={handleSignOut}
+      className="bg-white/10 border-white/30 text-white hover:bg-white/20 backdrop-blur-sm"
+    >
       Esci
     </Button>
   )
