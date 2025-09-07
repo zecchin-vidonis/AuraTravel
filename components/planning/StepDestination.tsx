@@ -54,15 +54,15 @@ export function StepDestination({ data, onUpdate, onNext }: StepDestinationProps
         <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
           <MapPin className="w-8 h-8 text-indigo-600" />
         </div>
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">Where are we off to?</h2>
-        <p className="text-gray-600">Tell us your dream destination or let us surprise you</p>
+        <h2 className="text-2xl font-bold text-gray-900 mb-2">Dove andiamo?</h2>
+        <p className="text-gray-600">Dicci la tua destinazione dei sogni o lascia che ti sorprendiamo</p>
       </div>
 
       <div className="space-y-4">
         <div className="relative">
           <Input
             type="text"
-            placeholder="Search for a destination..."
+            placeholder="Cerca una destinazione..."
             value={searchQuery}
             onChange={(e) => {
               setSearchQuery(e.target.value)
@@ -101,7 +101,7 @@ export function StepDestination({ data, onUpdate, onNext }: StepDestinationProps
           className="w-full py-3 text-lg flex items-center justify-center gap-2 border-dashed border-2 border-indigo-200 hover:border-indigo-300 hover:bg-indigo-50"
         >
           <Sparkles className="w-5 h-5 text-indigo-600" />
-          Not sure? Surprise me!
+          Non sei sicuro? Sorprendimi!
         </Button>
       </div>
 
@@ -109,7 +109,7 @@ export function StepDestination({ data, onUpdate, onNext }: StepDestinationProps
         <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
           <div className="flex items-center gap-3">
             <MapPin className="w-5 h-5 text-indigo-600" />
-            <span className="text-indigo-900 font-medium">Selected: {data.destination}</span>
+            <span className="text-indigo-900 font-medium">Selezionato: {data.destination}</span>
           </div>
         </div>
       )}
@@ -121,7 +121,7 @@ export function StepDestination({ data, onUpdate, onNext }: StepDestinationProps
           size="lg"
           className="px-8"
         >
-          Continue
+          Continua
         </Button>
       </div>
     </div>

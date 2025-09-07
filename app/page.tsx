@@ -13,7 +13,7 @@ export default function Home() {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Loading...</p>
+          <p className="mt-4 text-gray-600">Caricamento...</p>
         </div>
       </div>
     )
@@ -30,16 +30,16 @@ export default function Home() {
             <div className="flex items-center space-x-4">
               {user ? (
                 <div className="flex items-center space-x-4">
-                  <span className="text-gray-700">Welcome, {user.email}</span>
+                  <span className="text-gray-700">Benvenuto, {user.email}</span>
                   <ButtonLogout />
                 </div>
               ) : (
                 <div className="flex items-center space-x-4">
                   <Link href="/auth/login">
-                    <Button variant="outline">Sign In</Button>
+                    <Button variant="outline">Accedi</Button>
                   </Link>
                   <Link href="/auth/signup">
-                    <Button>Sign Up</Button>
+                    <Button>Registrati</Button>
                   </Link>
                 </div>
               )}
@@ -51,29 +51,29 @@ export default function Home() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center">
           <h2 className="text-4xl font-bold text-gray-900 sm:text-5xl md:text-6xl">
-            Discover Amazing
-            <span className="text-indigo-600"> Destinations</span>
+            Scopri Destinazioni
+            <span className="text-indigo-600"> Straordinarie</span>
           </h2>
           <p className="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-            Plan your perfect getaway with Aura Travel. From tropical beaches to mountain retreats, 
-            find your next adventure with us.
+            Pianifica la tua fuga perfetta con Aura Travel. Dalle spiagge tropicali ai rifugi montani,
+            trova la tua prossima avventura con noi.
           </p>
           <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8 gap-4">
             <Link href="/plan">
               <Button size="lg" className="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700">
-                Plan your next trip
+                Pianifica il tuo prossimo viaggio
               </Button>
             </Link>
             {user ? (
               <Link href="/dashboard">
                 <Button size="lg" variant="outline" className="w-full sm:w-auto">
-                  Go to Dashboard
+                  Vai alla Dashboard
                 </Button>
               </Link>
             ) : (
               <Link href="/auth/signup">
                 <Button size="lg" variant="outline" className="w-full sm:w-auto">
-                  Get Started
+                  Inizia Ora
                 </Button>
               </Link>
             )}
@@ -89,8 +89,8 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Explore Destinations</h3>
-              <p className="text-gray-600">Discover beautiful places around the world and find your perfect travel destination.</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Esplora Destinazioni</h3>
+              <p className="text-gray-600">Scopri luoghi meravigliosi in tutto il mondo e trova la tua destinazione di viaggio perfetta.</p>
             </div>
 
             <div className="bg-white rounded-lg shadow-md p-6">
@@ -99,8 +99,8 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Easy Booking</h3>
-              <p className="text-gray-600">Book your accommodations with ease and manage your reservations in one place.</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Prenotazione Facile</h3>
+              <p className="text-gray-600">Prenota i tuoi alloggi con facilità e gestisci le tue prenotazioni in un unico posto.</p>
             </div>
 
             <div className="bg-white rounded-lg shadow-md p-6">
@@ -109,8 +109,8 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Personalized Experience</h3>
-              <p className="text-gray-600">Get personalized recommendations and create memories that last a lifetime.</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Esperienza Personalizzata</h3>
+              <p className="text-gray-600">Ottieni raccomandazioni personalizzate e crea ricordi che durano una vita.</p>
             </div>
           </div>
         </div>

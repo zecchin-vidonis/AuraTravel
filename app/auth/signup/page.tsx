@@ -7,7 +7,7 @@ export default function SignupPage() {
         <div className="text-center">
           <h1 className="text-3xl font-bold text-gray-900">Aura Travel</h1>
           <p className="mt-2 text-sm text-gray-600">
-            Create your account
+            Crea il tuo account
           </p>
         </div>
         <ButtonSignup />

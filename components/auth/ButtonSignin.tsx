@@ -48,9 +48,9 @@ export function ButtonSignin() {
   return (
     <Card className="w-full max-w-md mx-auto">
       <CardHeader>
-        <CardTitle>Sign In</CardTitle>
+        <CardTitle>Accedi</CardTitle>
         <CardDescription>
-          Enter your credentials to access your account
+          Inserisci le tue credenziali per accedere al tuo account
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
@@ -60,7 +60,7 @@ export function ButtonSignin() {
             <Input
               id="email"
               type="email"
-              placeholder="Enter your email"
+              placeholder="Inserisci la tua email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -71,7 +71,7 @@ export function ButtonSignin() {
             <Input
               id="password"
               type="password"
-              placeholder="Enter your password"
+              placeholder="Inserisci la tua password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
@@ -83,7 +83,7 @@ export function ButtonSignin() {
             </div>
           )}
           <Button type="submit" className="w-full" disabled={loading}>
-            {loading ? 'Signing in...' : 'Sign In'}
+            {loading ? 'Accesso in corso...' : 'Accedi'}
           </Button>
         </form>
         
@@ -93,7 +93,7 @@ export function ButtonSignin() {
           </div>
           <div className="relative flex justify-center text-xs uppercase">
             <span className="bg-background px-2 text-muted-foreground">
-              Or continue with
+              Oppure continua con
             </span>
           </div>
         </div>
@@ -123,7 +123,7 @@ export function ButtonSignin() {
               fill="#EA4335"
             />
           </svg>
-          Continue with Google
+          Continua con Google
         </Button>
       </CardContent>
     </Card>

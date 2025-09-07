@@ -25,13 +25,13 @@ export function ButtonSignup() {
     setSuccess(false)
 
     if (password !== confirmPassword) {
-      setError('Passwords do not match')
+      setError('Le password non corrispondono')
       setLoading(false)
       return
     }
 
     if (password.length < 6) {
-      setError('Password must be at least 6 characters')
+      setError('La password deve essere di almeno 6 caratteri')
       setLoading(false)
       return
     }
@@ -64,14 +64,14 @@ export function ButtonSignup() {
     return (
       <Card className="w-full max-w-md mx-auto">
         <CardHeader>
-          <CardTitle>Check your email</CardTitle>
+          <CardTitle>Controlla la tua email</CardTitle>
           <CardDescription>
-            We've sent you a confirmation link to verify your account.
+            Ti abbiamo inviato un link di conferma per verificare il tuo account.
           </CardDescription>
         </CardHeader>
         <CardContent>
           <div className="text-sm text-green-600 bg-green-50 p-3 rounded-md">
-            Please check your email and click the confirmation link to complete your registration.
+            Controlla la tua email e clicca sul link di conferma per completare la registrazione.
           </div>
         </CardContent>
       </Card>
@@ -81,9 +81,9 @@ export function ButtonSignup() {
   return (
     <Card className="w-full max-w-md mx-auto">
       <CardHeader>
-        <CardTitle>Create Account</CardTitle>
+        <CardTitle>Crea Account</CardTitle>
         <CardDescription>
-          Enter your details to create a new account
+          Inserisci i tuoi dati per creare un nuovo account
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
@@ -93,7 +93,7 @@ export function ButtonSignup() {
             <Input
               id="email"
               type="email"
-              placeholder="Enter your email"
+              placeholder="Inserisci la tua email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -104,18 +104,18 @@ export function ButtonSignup() {
             <Input
               id="password"
               type="password"
-              placeholder="Create a password"
+              placeholder="Crea una password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="confirmPassword">Confirm Password</Label>
+            <Label htmlFor="confirmPassword">Conferma Password</Label>
             <Input
               id="confirmPassword"
               type="password"
-              placeholder="Confirm your password"
+              placeholder="Conferma la tua password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
@@ -127,7 +127,7 @@ export function ButtonSignup() {
             </div>
           )}
           <Button type="submit" className="w-full" disabled={loading}>
-            {loading ? 'Creating account...' : 'Create Account'}
+            {loading ? 'Creazione account...' : 'Crea Account'}
           </Button>
         </form>
         
@@ -137,7 +137,7 @@ export function ButtonSignup() {
           </div>
           <div className="relative flex justify-center text-xs uppercase">
             <span className="bg-background px-2 text-muted-foreground">
-              Or continue with
+              Oppure continua con
             </span>
           </div>
         </div>
@@ -167,7 +167,7 @@ export function ButtonSignup() {
               fill="#EA4335"
             />
           </svg>
-          Continue with Google
+          Continua con Google
         </Button>
       </CardContent>
     </Card>

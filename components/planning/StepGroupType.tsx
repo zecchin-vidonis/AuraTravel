@@ -18,31 +18,31 @@ const GROUP_TYPES = [
     id: 'solo',
     name: 'Solo',
     icon: User,
-    description: 'Just me, myself, and I',
+    description: 'Solo io, me stesso e io',
     emoji: '🧳',
     color: 'blue'
   },
   {
     id: 'friends',
-    name: 'Friends',
+    name: 'Amici',
     icon: Users,
-    description: 'Adventure with my crew',
+    description: 'Avventura con la mia squadra',
     emoji: '👥',
     color: 'green'
   },
   {
     id: 'couple',
-    name: 'Couple',
+    name: 'Coppia',
     icon: Heart,
-    description: 'Romantic getaway for two',
+    description: 'Fuga romantica per due',
     emoji: '💕',
     color: 'pink'
   },
   {
     id: 'family',
-    name: 'Family',
+    name: 'Famiglia',
     icon: Baby,
-    description: 'Fun for the whole family',
+    description: 'Divertimento per tutta la famiglia',
     emoji: '👨‍👩‍👧‍👦',
     color: 'orange'
   }
@@ -63,8 +63,8 @@ export function StepGroupType({ data, onUpdate, onNext }: StepGroupTypeProps) {
         <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
           <Users className="w-8 h-8 text-indigo-600" />
         </div>
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">Who's joining you?</h2>
-        <p className="text-gray-600">Tell us about your travel companions</p>
+        <h2 className="text-2xl font-bold text-gray-900 mb-2">Chi ti accompagna?</h2>
+        <p className="text-gray-600">Raccontaci dei tuoi compagni di viaggio</p>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -111,7 +111,7 @@ export function StepGroupType({ data, onUpdate, onNext }: StepGroupTypeProps) {
           <div className="flex items-center gap-3">
             <Users className="w-5 h-5 text-indigo-600" />
             <span className="text-indigo-900 font-medium">
-              Traveling as: {getGroupTypeInfo(data.groupType)?.name}
+              Viaggiando come: {getGroupTypeInfo(data.groupType)?.name}
             </span>
           </div>
         </div>
@@ -124,7 +124,7 @@ export function StepGroupType({ data, onUpdate, onNext }: StepGroupTypeProps) {
           size="lg"
           className="px-8"
         >
-          Continue
+          Continua
         </Button>
       </div>
     </div>

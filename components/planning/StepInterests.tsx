@@ -16,43 +16,43 @@ interface StepInterestsProps {
 const INTERESTS = [
   {
     id: 'culture',
-    name: 'Culture',
-    description: 'Museums, history, local traditions',
+    name: 'Cultura',
+    description: 'Musei, storia, tradizioni locali',
     emoji: '🏛️',
     color: 'blue'
   },
   {
     id: 'food',
-    name: 'Food',
-    description: 'Local cuisine, cooking classes, food tours',
+    name: 'Cibo',
+    description: 'Cucina locale, corsi di cucina, tour gastronomici',
     emoji: '🍽️',
     color: 'orange'
   },
   {
     id: 'nature',
-    name: 'Nature',
-    description: 'Hiking, wildlife, national parks',
+    name: 'Natura',
+    description: 'Escursionismo, fauna selvatica, parchi nazionali',
     emoji: '🌲',
     color: 'green'
   },
   {
     id: 'nightlife',
-    name: 'Nightlife',
-    description: 'Bars, clubs, live music, entertainment',
+    name: 'Vita Notturna',
+    description: 'Bar, club, musica dal vivo, intrattenimento',
     emoji: '🎉',
     color: 'purple'
   },
   {
     id: 'romance',
-    name: 'Romance',
-    description: 'Intimate dinners, scenic views, couples activities',
+    name: 'Romanticismo',
+    description: 'Cene intime, viste panoramiche, attività per coppie',
     emoji: '💕',
     color: 'pink'
   },
   {
     id: 'adventure',
-    name: 'Adventure',
-    description: 'Extreme sports, outdoor activities, thrill-seeking',
+    name: 'Avventura',
+    description: "Sport estremi, attività all'aperto, ricerca di emozioni",
     emoji: '🏔️',
     color: 'red'
   }
@@ -78,8 +78,8 @@ export function StepInterests({ data, onUpdate, onNext }: StepInterestsProps) {
         <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
           <Heart className="w-8 h-8 text-indigo-600" />
         </div>
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">What should your trip be about?</h2>
-        <p className="text-gray-600">Select all the experiences that excite you (you can choose multiple!)</p>
+        <h2 className="text-2xl font-bold text-gray-900 mb-2">Di cosa dovrebbe trattare il tuo viaggio?</h2>
+        <p className="text-gray-600">Seleziona tutte le esperienze che ti entusiasmano (puoi scegliere più opzioni!)</p>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -125,7 +125,7 @@ export function StepInterests({ data, onUpdate, onNext }: StepInterestsProps) {
         <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
           <div className="flex items-center gap-3 mb-2">
             <Heart className="w-5 h-5 text-indigo-600" />
-            <span className="text-indigo-900 font-medium">Selected interests:</span>
+            <span className="text-indigo-900 font-medium">Interessi selezionati:</span>
           </div>
           <div className="flex flex-wrap gap-2">
             {data.interests.map((interest) => (
@@ -148,7 +148,7 @@ export function StepInterests({ data, onUpdate, onNext }: StepInterestsProps) {
           size="lg"
           className="px-8"
         >
-          Create My Plan
+          Crea il Mio Piano
         </Button>
       </div>
     </div>

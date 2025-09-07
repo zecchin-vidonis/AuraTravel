@@ -24,12 +24,12 @@ export interface PlanningData {
 }
 
 const STEPS = [
-  { id: 1, title: 'Destination', component: StepDestination },
-  { id: 2, title: 'When & How Long', component: StepWhenAndDuration },
+  { id: 1, title: 'Destinazione', component: StepDestination },
+  { id: 2, title: 'Quando e Durata', component: StepWhenAndDuration },
   { id: 3, title: 'Budget', component: StepBudget },
-  { id: 4, title: 'Group Type', component: StepGroupType },
-  { id: 5, title: 'Group Age Range', component: StepGroupAgeRange },
-  { id: 6, title: 'Interests', component: StepInterests },
+  { id: 4, title: 'Tipo di Gruppo', component: StepGroupType },
+  { id: 5, title: 'Fascia d\'Età', component: StepGroupAgeRange },
+  { id: 6, title: 'Interessi', component: StepInterests },
 ]
 
 export default function PlanPage() {
@@ -59,6 +59,7 @@ export default function PlanPage() {
       // Simulate API call
       setTimeout(() => {
         setIsLoading(false)
+        setCurrentStep(prev => prev + 1) // Move to summary step
       }, 3000)
     }
   }
@@ -91,8 +92,8 @@ export default function PlanPage() {
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-indigo-600 mx-auto mb-4"></div>
-          <h2 className="text-2xl font-semibold text-gray-900 mb-2">Building your adventure...</h2>
-          <p className="text-gray-600">We're crafting the perfect trip just for you</p>
+          <h2 className="text-2xl font-semibold text-gray-900 mb-2">Stiamo creando la tua avventura...</h2>
+          <p className="text-gray-600">Stiamo preparando il viaggio perfetto per te</p>
         </div>
       </div>
     )
@@ -116,11 +117,11 @@ export default function PlanPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">Plan your next trip</h1>
-              <p className="text-gray-600 mt-1">Step {currentStep} of {STEPS.length}: {STEPS[currentStep - 1].title}</p>
+              <h1 className="text-2xl font-bold text-gray-900">Pianifica il tuo prossimo viaggio</h1>
+              <p className="text-gray-600 mt-1">Passo {currentStep} di {STEPS.length}: {STEPS[currentStep - 1].title}</p>
             </div>
             <div className="text-sm text-gray-500">
-              {Math.round(progress)}% complete
+              {Math.round(progress)}% completato
             </div>
           </div>
           
@@ -162,7 +163,7 @@ export default function PlanPage() {
             className="flex items-center gap-2"
           >
             <ChevronLeft className="w-4 h-4" />
-            Previous
+            Precedente
           </Button>
 
           <div className="flex gap-2">
@@ -181,7 +182,7 @@ export default function PlanPage() {
             disabled={!canProceed(currentStep, planningData)}
             className="flex items-center gap-2"
           >
-            {currentStep === STEPS.length ? 'Create Plan' : 'Next'}
+            {currentStep === STEPS.length ? 'Crea Piano' : 'Avanti'}
             {currentStep < STEPS.length && <ChevronRight className="w-4 h-4" />}
           </Button>
         </div>

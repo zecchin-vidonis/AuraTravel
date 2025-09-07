@@ -16,36 +16,36 @@ interface StepWhenAndDurationProps {
 }
 
 const SEASONS = [
-  { id: 'spring', name: 'Spring', emoji: '🌸', months: 'Mar - May' },
-  { id: 'summer', name: 'Summer', emoji: '☀️', months: 'Jun - Aug' },
-  { id: 'autumn', name: 'Autumn', emoji: '🍂', months: 'Sep - Nov' },
-  { id: 'winter', name: 'Winter', emoji: '❄️', months: 'Dec - Feb' },
+  { id: 'spring', name: 'Primavera', emoji: '🌸', months: 'Mar - Mag' },
+  { id: 'summer', name: 'Estate', emoji: '☀️', months: 'Giu - Ago' },
+  { id: 'autumn', name: 'Autunno', emoji: '🍂', months: 'Set - Nov' },
+  { id: 'winter', name: 'Inverno', emoji: '❄️', months: 'Dic - Feb' },
 ]
 
 const MONTHS = [
-  { id: 'january', name: 'January', emoji: '❄️' },
-  { id: 'february', name: 'February', emoji: '💝' },
-  { id: 'march', name: 'March', emoji: '🌸' },
-  { id: 'april', name: 'April', emoji: '🌷' },
-  { id: 'may', name: 'May', emoji: '🌺' },
-  { id: 'june', name: 'June', emoji: '☀️' },
-  { id: 'july', name: 'July', emoji: '🏖️' },
-  { id: 'august', name: 'August', emoji: '🌻' },
-  { id: 'september', name: 'September', emoji: '🍂' },
-  { id: 'october', name: 'October', emoji: '🎃' },
-  { id: 'november', name: 'November', emoji: '🦃' },
-  { id: 'december', name: 'December', emoji: '🎄' },
+  { id: 'january', name: 'Gennaio', emoji: '❄️' },
+  { id: 'february', name: 'Febbraio', emoji: '💝' },
+  { id: 'march', name: 'Marzo', emoji: '🌸' },
+  { id: 'april', name: 'Aprile', emoji: '🌷' },
+  { id: 'may', name: 'Maggio', emoji: '🌺' },
+  { id: 'june', name: 'Giugno', emoji: '☀️' },
+  { id: 'july', name: 'Luglio', emoji: '🏖️' },
+  { id: 'august', name: 'Agosto', emoji: '🌻' },
+  { id: 'september', name: 'Settembre', emoji: '🍂' },
+  { id: 'october', name: 'Ottobre', emoji: '🎃' },
+  { id: 'november', name: 'Novembre', emoji: '🦃' },
+  { id: 'december', name: 'Dicembre', emoji: '🎄' },
 ]
 
 const DURATION_OPTIONS = [
   { days: 2, label: 'Weekend' },
-  { days: 3, label: '3 days' },
-  { days: 5, label: '5 days' },
-  { days: 7, label: '1 week' },
-  { days: 10, label: '10 days' },
-  { days: 14, label: '2 weeks' },
-  { days: 21, label: '3 weeks' },
-  { days: 30, label: '1 month' },
+  { days: 3, label: '3 giorni' },
+  { days: 5, label: '5 giorni' },
+  { days: 7, label: '1 settimana' },
+  { days: 10, label: '10 giorni' },
+  { days: 14, label: '2 settimane' },
+  { days: 21, label: '3 settimane' },
+  { days: 30, label: '1 mese' },
 ]
 
 export function StepWhenAndDuration({ data, onUpdate, onNext }: StepWhenAndDurationProps) {
@@ -65,15 +65,15 @@ export function StepWhenAndDuration({ data, onUpdate, onNext }: StepWhenAndDurat
         <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
           <Calendar className="w-8 h-8 text-indigo-600" />
         </div>
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">When are you going, and for how many days?</h2>
-        <p className="text-gray-600">Choose your travel season and trip duration</p>
+        <h2 className="text-2xl font-bold text-gray-900 mb-2">Quando parti e per quanti giorni?</h2>
+        <p className="text-gray-600">Scegli la stagione di viaggio e la durata del tuo viaggio</p>
       </div>
 
       {/* When Section */}
       <div className="space-y-4">
         <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
           <Calendar className="w-5 h-5" />
-          When are you traveling?
+          Quando viaggi?
         </h3>
         
         <div className="grid grid-cols-2 gap-3">
@@ -101,7 +101,7 @@ export function StepWhenAndDuration({ data, onUpdate, onNext }: StepWhenAndDurat
             onClick={() => setShowMonths(!showMonths)}
             className="text-indigo-600 hover:text-indigo-700 font-medium text-sm"
           >
-            {showMonths ? 'Hide specific months' : 'Choose a specific month'}
+            {showMonths ? 'Nascondi mesi specifici' : 'Scegli un mese specifico'}
           </button>
         </div>
 
@@ -131,7 +131,7 @@ export function StepWhenAndDuration({ data, onUpdate, onNext }: StepWhenAndDurat
       <div className="space-y-4">
         <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
           <Clock className="w-5 h-5" />
-          How long is your trip?
+          Quanto dura il tuo viaggio?
         </h3>
         
         <div className="grid grid-cols-2 gap-3">
@@ -156,7 +156,7 @@ export function StepWhenAndDuration({ data, onUpdate, onNext }: StepWhenAndDurat
         {/* Custom Duration */}
         <div className="bg-gray-50 rounded-lg p-4">
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            Or enter custom duration (2-30 days):
+            Oppure inserisci una durata personalizzata (2-30 giorni):
           </label>
           <div className="flex items-center gap-2">
             <input
@@ -167,7 +167,7 @@ export function StepWhenAndDuration({ data, onUpdate, onNext }: StepWhenAndDurat
               onChange={(e) => handleDurationSelect(parseInt(e.target.value) || 2)}
               className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
-            <span className="text-gray-600">days</span>
+            <span className="text-gray-600">giorni</span>
           </div>
         </div>
       </div>
@@ -177,7 +177,7 @@ export function StepWhenAndDuration({ data, onUpdate, onNext }: StepWhenAndDurat
           <div className="flex items-center gap-3">
             <Calendar className="w-5 h-5 text-indigo-600" />
             <span className="text-indigo-900 font-medium">
-              {data.duration} days in {SEASONS.find(s => s.id === data.when)?.name || MONTHS.find(m => m.id === data.when)?.name}
+              {data.duration} giorni in {SEASONS.find(s => s.id === data.when)?.name || MONTHS.find(m => m.id === data.when)?.name}
             </span>
           </div>
         </div>
@@ -190,7 +190,7 @@ export function StepWhenAndDuration({ data, onUpdate, onNext }: StepWhenAndDurat
           size="lg"
           className="px-8"
         >
-          Continue
+          Continua
         </Button>
       </div>
     </div>

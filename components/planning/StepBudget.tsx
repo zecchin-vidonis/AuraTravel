@@ -18,27 +18,27 @@ interface StepBudgetProps {
 const BUDGET_LEVELS = [
   {
     id: 'backpacker',
-    name: 'Backpacker',
+    name: 'Zaino in Spalla',
     icon: Backpack,
-    description: 'Budget-friendly adventures',
+    description: 'Avventure economiche',
     emoji: '🎒',
     range: '$20-50/day',
     color: 'green'
   },
   {
     id: 'easygoing',
-    name: 'Easygoing',
+    name: 'Tranquillo',
     icon: Coffee,
-    description: 'Comfortable without breaking the bank',
+    description: 'Comfortevole senza spendere troppo',
     emoji: '☕',
     range: '$50-150/day',
     color: 'blue'
   },
   {
     id: 'indulgent',
-    name: 'Indulgent',
+    name: 'Indulgente',
     icon: Crown,
-    description: 'Luxury experiences and premium stays',
+    description: 'Esperienze di lusso e soggiorni premium',
     emoji: '👑',
     range: '$150+/day',
     color: 'purple'
@@ -72,8 +72,8 @@ export function StepBudget({ data, onUpdate, onNext }: StepBudgetProps) {
         <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
           <DollarSign className="w-8 h-8 text-indigo-600" />
         </div>
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">What's your budget style?</h2>
-        <p className="text-gray-600">Choose your comfort level and spending preference</p>
+        <h2 className="text-2xl font-bold text-gray-900 mb-2">Qual è il tuo stile di budget?</h2>
+        <p className="text-gray-600">Scegli il tuo livello di comfort e preferenza di spesa</p>
       </div>
 
       <div className="space-y-4">
@@ -134,8 +134,8 @@ export function StepBudget({ data, onUpdate, onNext }: StepBudgetProps) {
                 <DollarSign className="w-6 h-6 text-gray-600" />
               </div>
               <div className="flex-1">
-                <h3 className="text-lg font-semibold text-gray-900 mb-1">Custom Budget</h3>
-                <p className="text-gray-600">I have a specific amount in mind</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-1">Budget Personalizzato</h3>
+                <p className="text-gray-600">Ho un importo specifico in mente</p>
               </div>
             </div>
           </button>
@@ -144,22 +144,22 @@ export function StepBudget({ data, onUpdate, onNext }: StepBudgetProps) {
             <div className="mt-4 pt-4 border-t border-gray-200">
               <div className="flex items-center gap-2">
                 <span className="text-2xl">💰</span>
-                <span className="text-gray-700 font-medium">My budget is:</span>
+                <span className="text-gray-700 font-medium">Il mio budget è:</span>
               </div>
               <div className="flex items-center gap-2 mt-3">
                 <span className="text-gray-600">$</span>
                 <Input
                   type="number"
-                  placeholder="Enter amount"
+                  placeholder="Inserisci importo"
                   value={customAmount}
                   onChange={(e) => handleCustomAmount(e.target.value)}
                   className="flex-1"
                 />
-                <span className="text-gray-600">per day</span>
+                <span className="text-gray-600">al giorno</span>
               </div>
               {customAmount && (
                 <p className="text-sm text-gray-500 mt-2">
-                  Total for {data.duration} days: ${(parseInt(customAmount) * data.duration).toLocaleString()}
+                  Totale per {data.duration} giorni: ${(parseInt(customAmount) * data.duration).toLocaleString()}
                 </p>
               )}
             </div>
@@ -173,7 +173,7 @@ export function StepBudget({ data, onUpdate, onNext }: StepBudgetProps) {
             <DollarSign className="w-5 h-5 text-indigo-600" />
             <span className="text-indigo-900 font-medium">
               {data.budget === 'custom' 
-                ? `Custom budget: $${customAmount}/day`
+                ? `Budget personalizzato: $${customAmount}/giorno`
                 : `${getBudgetInfo(data.budget)?.name} style (${getBudgetInfo(data.budget)?.range})`
               }
             </span>
@@ -188,7 +188,7 @@ export function StepBudget({ data, onUpdate, onNext }: StepBudgetProps) {
           size="lg"
           className="px-8"
         >
-          Continue
+          Continua
         </Button>
       </div>
     </div>

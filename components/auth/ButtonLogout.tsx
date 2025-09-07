@@ -12,7 +12,7 @@ export function ButtonLogout() {
 
   return (
     <Button variant="outline" onClick={handleSignOut}>
-      Sign Out
+      Esci
     </Button>
   )
 }

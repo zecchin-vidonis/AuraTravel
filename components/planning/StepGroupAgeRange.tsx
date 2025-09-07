@@ -17,41 +17,41 @@ const AGE_RANGES = [
   {
     id: '18-25',
     name: '18-25',
-    description: 'Young adults & students',
+    description: 'Giovani adulti e studenti',
     emoji: '🎓',
-    vibe: 'Energetic & social',
+    vibe: 'Energetico e sociale',
     color: 'blue'
   },
   {
     id: '26-40',
     name: '26-40',
-    description: 'Young professionals',
+    description: 'Giovani professionisti',
     emoji: '💼',
-    vibe: 'Active & ambitious',
+    vibe: 'Attivo e ambizioso',
     color: 'green'
   },
   {
     id: '40-60',
     name: '40-60',
-    description: 'Established adults',
+    description: 'Adulti affermati',
     emoji: '🏆',
-    vibe: 'Refined & experienced',
+    vibe: 'Raffinato ed esperto',
     color: 'purple'
   },
   {
     id: '60+',
     name: '60+',
-    description: 'Mature travelers',
+    description: 'Viaggiatori maturi',
     emoji: '🌅',
-    vibe: 'Wise & relaxed',
+    vibe: 'Saggio e rilassato',
     color: 'orange'
   },
   {
     id: 'mixed',
-    name: 'Mixed ages',
-    description: 'All generations together',
+    name: 'Età miste',
+    description: 'Tutte le generazioni insieme',
     emoji: '🌈',
-    vibe: 'Diverse & inclusive',
+    vibe: 'Diverso e inclusivo',
     color: 'pink'
   }
 ]
@@ -71,8 +71,8 @@ export function StepGroupAgeRange({ data, onUpdate, onNext }: StepGroupAgeRangeP
         <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
           <Users className="w-8 h-8 text-indigo-600" />
         </div>
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">What's the vibe of your group?</h2>
-        <p className="text-gray-600">Help us understand your group's energy and preferences</p>
+        <h2 className="text-2xl font-bold text-gray-900 mb-2">Qual è l'atmosfera del tuo gruppo?</h2>
+        <p className="text-gray-600">Aiutaci a capire l'energia e le preferenze del tuo gruppo</p>
       </div>
 
       <div className="space-y-3">
@@ -124,7 +124,7 @@ export function StepGroupAgeRange({ data, onUpdate, onNext }: StepGroupAgeRangeP
           <div className="flex items-center gap-3">
             <Users className="w-5 h-5 text-indigo-600" />
             <span className="text-indigo-900 font-medium">
-              Group vibe: {getAgeRangeInfo(data.groupAgeRange)?.name} - {getAgeRangeInfo(data.groupAgeRange)?.vibe}
+              Atmosfera del gruppo: {getAgeRangeInfo(data.groupAgeRange)?.name} - {getAgeRangeInfo(data.groupAgeRange)?.vibe}
             </span>
           </div>
         </div>
@@ -137,7 +137,7 @@ export function StepGroupAgeRange({ data, onUpdate, onNext }: StepGroupAgeRangeP
           size="lg"
           className="px-8"
         >
-          Continue
+          Continua
         </Button>
       </div>
     </div>
