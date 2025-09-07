@@ -58,16 +58,21 @@ export default function Home() {
             Plan your perfect getaway with Aura Travel. From tropical beaches to mountain retreats, 
             find your next adventure with us.
           </p>
-          <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
+          <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8 gap-4">
+            <Link href="/plan">
+              <Button size="lg" className="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700">
+                Plan your next trip
+              </Button>
+            </Link>
             {user ? (
               <Link href="/dashboard">
-                <Button size="lg" className="w-full sm:w-auto">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto">
                   Go to Dashboard
                 </Button>
               </Link>
             ) : (
               <Link href="/auth/signup">
-                <Button size="lg" className="w-full sm:w-auto">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto">
                   Get Started
                 </Button>
               </Link>
